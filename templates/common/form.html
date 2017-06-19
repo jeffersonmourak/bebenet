@@ -1,0 +1,33 @@
+{%  extends 'base.html' %}
+{% block header %}
+	<title>{{title}}</title>
+{% endblock %}
+{% block topHeader %}
+	<a href="/dashboard/logout">
+		<div class="main-header-button main-header-right">
+			Sair
+			<svg class="glyph offset padlock-unlocked"><use xlink:href="#offset-padlock-unlocked"></use></svg>
+		</div>
+	</a>
+	<h2>{{title}}</h2>
+	<a href="/dashboard">
+		<div class="main-header-button main-header-left">
+			<svg class="glyph offset house"><use xlink:href="#offset-house"/></svg>
+		</div>
+	</a>
+{% endblock %}
+{% block body %}
+<header class="full-page">
+		<div class="container" id="maincontent" tabindex="-1">
+				<div class="row">
+						<div class="col-lg-12">
+							<form action="" method="POST" enctype="multipart/form-data">
+								{% csrf_token %}
+								{{form}}
+								<input type="submit" value="Salvar">
+							</form>
+						</div>
+				</div>
+		</div>
+</header>
+{% endblock %}

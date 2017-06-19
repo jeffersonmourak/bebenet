@@ -1,0 +1,50 @@
+{%  extends 'base.html' %}
+{% load staticfiles %}
+{% block header %}
+	<title>Dashboard</title>
+{% endblock %}
+
+{% block topHeader %}
+	<a href="/dashboard/logout">
+		<div class="main-header-button main-header-right">
+			Sair
+			<svg class="glyph offset padlock-unlocked"><use xlink:href="#offset-padlock-unlocked"></use></svg>
+		</div>
+	</a>
+	<h2>Dashboard</h2>
+{% endblock %}
+
+{% block nav %}
+	<p style="color:#fff">olá {{user.username}}</p>
+	<p><a href="/logout">Sair</a></p>
+{% endblock %}
+
+{% block body %}
+<header class="full-page">
+		<div class="container" id="maincontent" tabindex="-1">
+				<div class="row">
+						<div class="col-lg-12">
+							<h2>Nova pergunta</h2>
+							<form action="/question/add/" method="POST" enctype="multipart/form-data">
+								{% csrf_token %}
+								{{newQuestion}}
+								<input type="submit" value="Salvar">
+							</form>
+
+							<h2>Perguntas</h2>
+							{% for question in questions %}
+							<tr>
+								<td>{{question.subject}}</td>
+								<td>{{question.text|truncatechars:12}}</td>
+								<td>
+									<a href="/question/edit/{{question.id}}">
+										Editar
+									</a>
+								</td>
+							</tr>
+							{% endfor %}
+						</div>
+				</div>
+		</div>
+</header>
+{% endblock %}

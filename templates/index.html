@@ -1,0 +1,259 @@
+{%  extends 'base.html' %}
+{% load staticfiles %}
+{% block header %}
+	<title>Dashboard</title>
+{% endblock %}
+
+{% block body %}
+<div id="skipnav"><a href="#maincontent">Skip to main content</a></div>
+    {% block nav %}
+      <li class="hidden">
+          <a href="#page-top"></a>
+      </li>
+      <li class="page-scroll">
+          <a href="#informações">Informações</a>
+      </li>
+      <li class="page-scroll">
+          <a href="#negocie">Negocie</a>
+      </li>
+      <li class="page-scroll">
+          <a href="#forum">Fórum</a>
+      </li>
+      <li class="page-scroll">
+          <a href="#sobre">Sobre</a>
+      </li>
+      <li class="page-scroll">
+          <a href="/login">Login/Registre-se</a>
+      </li>
+    {% endblock %}
+    <!-- Header -->
+    <header>
+        <div class="container" id="maincontent" tabindex="-1">
+            <div class="row">
+                <div class="col-lg-12">
+                    <img class="img-responsive" src="{% static 'img/bebenet1.png' %}" alt="" height="100" width="400">
+                    <div class="intro-text">
+                        <!-- <h1 class="name">Bebênet</h1> -->
+                        <hr class="star-light">
+                        <span class="skills">Dê os primeiros passos pelo seu bebê</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- informações Section -->
+    <section id="informações">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <h2>Informações</h2>
+                    <hr class="star-primary">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <p>Acesse informações sobre saúde, cuidados, curiosidades sobre o universo dos bebês.</p>
+                </div>
+            </div>
+            <div class="col-lg-8 col-lg-offset-2 text-center">
+                <li class="page-scroll">
+                    <a href="/dashboard" class="btn btn-lg btn btn-primary">
+                        <i class="fa fa-info-circle"></i>Acessar Informações
+                    </a>
+                </li>
+            </div>
+    </section>
+
+    <!-- Negocie Section -->
+    <section class="success" id="negocie">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <h2>Negocie</h2>
+                    <hr class="star-light">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <p>Compre, venda, alugue produtos ou serviços para bebês.</p>
+                </div>
+            </div>
+            <div class="col-lg-8 col-lg-offset-2 text-center">
+                <li class="page-scroll">
+                    <a href="#" class="btn btn-lg btn-outline">
+                        <i class="fa fa-shopping-cart"></i> Acessar negócios
+                    </a>
+                </li>
+            </div>
+    </section>
+
+    <!-- informações Section -->
+    <section id="forum">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <h2>Fórum</h2>
+                    <hr class="star-primary">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <p>Não encontrou alguma informação?<br>Deseja acrescentar alguma informação nova?<br>Acesse nosso fórum e discuta com outros usuários!</p>
+                </div>
+            </div>
+            <div class="col-lg-8 col-lg-offset-2 text-center">
+                <li class="page-scroll">
+                    <a href="/dashboard" class="btn btn-lg btn btn-primary">
+                        <i class="fa fa-comments-o"></i>Acessar Fórum
+                    </a>
+                </li>
+            </div>
+          </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="success" id="sobre">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <h2>Sobre</h2>
+                    <hr class="star-light">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-4 col-lg-offset-2">
+                    <p>Bebênet é o site ideal para a compra, venda, aluguéis de artigos ou serviços para bebês e crianças e informações úteis para ajudar nos primeiros anos de vidas dos pequenos.</p>
+                </div>
+                <div class="col-lg-4">
+                    <p>Na dúvida sobre o melhor para o seu bebê o bebênet é o seu lugar!</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Contact Section
+    <section id="contact" >
+        <div class="container">
+            <div class="col-lg-4 text-center">
+                <ul class="nav nav-tabs">
+                    <li class="active"><a href="#contact" class="btn btn-success btn-lg">Registro</a></li>
+                    <li><a href="#" class="btn btn-success btn-lg">Login</a></li>
+                </ul>
+            </div>
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <hr class="star-primary">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-8 col-lg-offset-2">
+                    To configure the contact form email address, go to mail/contact_me.php and update the email address in the PHP file on line 19.
+                    The form should work on most web servers, but if the form is not working you may need to configure your web server differently.
+                    <form name="sentMessage" id="contactForm" novalidate>
+                        <div class="row control-group">
+                            <div class="form-group col-xs-12 floating-label-form-group controls">
+                                <label for="nomeome">Nome</label>
+                                <input type="text" class="form-control" placeholder="Nome" id="nome" required data-validation-required-message="Por favor entre com o seu nome.">
+                                <p class="help-block text-danger"></p>
+                            </div>
+                        </div>
+                        <div class="row control-group">
+                            <div class="form-group col-xs-12 floating-label-form-group controls">
+                                <label for="email">Email</label>
+                                <input type="email" class="form-control" placeholder="Email" id="email" required data-validation-required-message="Por favor entre com o email.">
+                                <p class="help-block text-danger"></p>
+                            </div>
+                        </div>
+                        <div class="row control-group">
+                            <div class="form-group col-xs-12 floating-label-form-group controls">
+                                <label for="telefone">Telefone</label>
+                                <input type="telefone" class="form-control" placeholder="Telefone" id="telefone" required data-validation-required-message="Por favor entre com o telefone.">
+                                <p class="help-block text-danger"></p>
+                            </div>
+                        </div>
+                        <div class="row control-group">
+                            <div class="form-group col-xs-12 floating-label-form-group controls">
+                                <label for="cidade">Cidade</label>
+                                <input type="cidade" class="form-control" placeholder="Cidade" id="cidade" required data-validation-required-message="Por favor entre com nome da cidade.">
+                                <p class="help-block text-danger"></p>
+                            </div>
+                        </div>
+                        <div class="row control-group">
+                            <div class="form-group col-xs-12 floating-label-form-group controls">
+                                <label for="uf">UF</label>
+                                <input type="uf" class="form-control" placeholder="UF" id="uf" required data-validation-required-message="Por favor entre com a UF.">
+                                <p class="help-block text-danger"></p>
+                            </div>
+                        </div>
+                        <div class="row control-group">
+                            <div class="form-group col-xs-12 floating-label-form-group controls">
+                                <label for="Endereço">Endereço</label>
+                                <textarea rows="5" class="form-control" placeholder="Endereço" id="Endereço" required data-validation-required-message="Por favor entre com o endereço."></textarea>
+                                <p class="help-block text-danger"></p>
+                            </div>
+                        </div>
+                        <br>
+                        <div id="success"></div>
+                        <div class="row">
+                            <div class="form-group col-xs-12">
+                                <button type="submit" class="btn btn-success btn-lg">Registre</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section> -->
+
+
+    <!-- Footer -->
+    <footer class="text-center">
+        <div class="footer-above">
+            <div class="container">
+                <div class="row">
+                    <div class="footer-col col-md-4">
+                        <h3>Localização</h3>
+                        <p>Universidade Federal do Rio Grande do Norte, Setor 3
+                            <br>Natal, RN 59078-970</p>
+                    </div>
+                    <div class="footer-col col-md-4">
+                        <h3>Redes Sociais</h3>
+                        <ul class="list-inline">
+                            <li>
+                                <a href="#" class="btn-social btn-outline"><span class="sr-only">Facebook</span><i class="fa fa-fw fa-facebook"></i></a>
+                            </li>
+                            <li>
+                                <a href="#" class="btn-social btn-outline"><span class="sr-only">Google Plus</span><i class="fa fa-fw fa-google-plus"></i></a>
+                            </li>
+                            <li>
+                                <a href="#" class="btn-social btn-outline"><span class="sr-only">Twitter</span><i class="fa fa-fw fa-twitter"></i></a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="footer-col col-md-4">
+                        <h3>Sobre o SomaInfinito</h3>
+                        <p><b><i>SomaInfinito</b></i> é um time criado como resultado da disciplina de Desenvolvimento em Times com a orientação do professor Marco Goldbarg.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer-below">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12">
+                        Copyright &copy; SomaInfinito 2017
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scroll to Top Button (Only visible on small and extra-small screen sizes) -->
+    <div class="scroll-top page-scroll hidden-sm hidden-xs hidden-lg hidden-md">
+        <a class="btn btn-primary" href="#page-top">
+            <i class="fa fa-chevron-up"></i>
+        </a>
+    </div>
+{% endblock %}
